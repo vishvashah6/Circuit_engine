@@ -1,0 +1,95 @@
+{
+  "attachments": {
+
+  },
+  "circuitDefinitionId": "ALTA_DE_COMERCIO",
+  "circuitId": "76b61476-acda-47e1-9bc3-5059f983970f",
+  "createdAt": 1530013807270,
+  "createdByGroup": "group1",
+  "createdByRole": "role1",
+  "createdByUser": "user1",
+  "currentStatus": "CREATED",
+  "history": [
+    {
+      "circuitStatus": "CREATED",
+      "event": "CIRCUIT_CREATION",
+      "startedAt": 1530013807271
+    }
+  ],
+  "payload": {
+    "datos_de_comercio": {
+      "address": {
+        "city": "SAN JUSTO",
+        "country_name": "ARGENTINA",
+        "floor": "0",
+        "jurisdiction": "LA MATANZA",
+        "location_type": "Local",
+        "postal_code": "1754",
+        "region": "BUENOS AIRES",
+        "street_name": "ALMAFUERTE",
+        "street_number": "3050"
+      },
+      "company_or_owner_name": "MUNICIPALIDAD DE LA MATANZA",
+      "documents": {
+        "D4": {
+          "document": {
+            "mime_type": "image/jpeg",
+            "url": "1.jpeg"
+          },
+          "sort_order": 1
+        }
+      },
+      "email": "#####adio@lamatanza.gov.ar",
+      "entity_type": "person",
+      "existing_customer": true,
+      "phone_area_code": "011",
+      "phone_number": "####5656"
+    },
+    "datos_impositivos": {
+      "cuit": "34999257560",
+      "documents": {
+        "D15": {
+          "document": {
+            "mime_type": "image/jpeg",
+            "url": "1.jpeg"
+          },
+          "sort_order": 1
+        },
+        "D16": {
+          "document": {
+            "mime_type": "image/jpeg",
+            "url": "2.jpeg"
+          },
+          "sort_order": 1
+        },
+        "D17": {
+          "document": {
+            "mime_type": "image/jpeg",
+            "url": "3.jpeg"
+          },
+          "sort_order": 1
+        }
+      },
+      "entity_type": "person",
+      "iibb_tax_registration_number": "12312331231",
+      "iibb_tax_type": "Exento",
+      "iva_tax_type": "IVA Exento",
+      "main_activity": {
+        "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES",
+        "id": "492110",
+        "name": "Servicio de TRANSPORTE automotor urbano y suburbano regular de pasajeros"
+      }
+    },
+    "preferencias_de_pago": {
+      "branch": {
+        "code": "27",
+        "description": "SAN JUSTO"
+      },
+      "existing_customer": true,
+      "master_payment_account_number": "CC-270003279"
+    }
+  },
+  "requestCompleted": false,
+  "tenantId": "tenant1",
+  "tenantId-createdAt-circuitDefinitionId": "tenant1#2018-06-26T11:50:07.270Z#ALTA_DE_COMERCIO"
+}

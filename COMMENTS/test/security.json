@@ -1,0 +1,28 @@
+{
+  "user": "gaston@btekstudio1.onmicrosoft.com",
+  "tenant": "tenant1",
+  "roles": [
+    "COMERCIOS_SUCURSAL_OFICIAL"
+  ],
+  "conditions": [
+    {
+      "ForAnyValue:StringEquals": {
+        "assignedToGroup": "group1",
+        "createdByGroup": "group1"
+      }
+    }
+  ],
+  "views": {
+    "view1": {
+      "default": true,
+      "fields": {
+        "attachments": true,
+        "circuitId": false,
+        "creditCard": "#mask"
+      }
+    }
+  },
+  "groups": [
+    "group1"
+  ]
+}

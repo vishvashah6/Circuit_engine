@@ -1,0 +1,55 @@
+  ${CF_FUNCTION_NAME}:
+    Type: AWS::Serverless::Function
+    Properties:
+      MemorySize: ${MEMORY_SIZE}
+      Timeout: ${TIMEOUT}
+      FunctionName: ${FUNCTION_NAME}
+      Handler: ${HANDLER}
+      Role:
+        Fn::ImportValue:
+          !Sub "\${Environment}-CircuitsEngineRole"
+      CodeUri:
+        Bucket: !Ref DeployBucketName
+        Key: ${FUNCTION_NAME}-${VERSION}.zip
+      Environment:
+        Variables:
+          MD5: ${VERSION}
+          ${CUSTOM_VARIABLES}
+  ${CF_FUNCTION_NAME}ApiResourceMethodGet:
+      Type: "AWS::ApiGateway::Method"
+      Properties:
+        HttpMethod: \"GET\"
+        OperationName: \"Get Circuit Detail\"
+        ResourceId: !Ref ${ENV}CircuitsEngineUpdateCircuitCircuitApiResource
+        RestApiId: !Ref CircuitsEngineAPI
+        AuthorizationType: \"CUSTOM\"
+        AuthorizerId: !Ref ApiGatewayAuthorizer
+        MethodResponses:
+          -
+            StatusCode: "200"
+            ResponseParameters:
+                \"method.response.header.Access-Control-Allow-Methods\": \"'GET,OPTIONS'\"
+                \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+                \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+            ResponseModels:
+                "application/json": !Ref ApiGatewayCircuitOutputModel
+        Integration:
+          Type: "AWS_PROXY"
+          Uri: !Sub arn:aws:apigateway:\${AWS::Region}:lambda:path/2015-03-31/functions/\${${CF_FUNCTION_NAME}.Arn}/invocations
+          IntegrationResponses:
+            -
+              StatusCode: "200"
+              ResponseParameters:
+                \"method.response.header.Access-Control-Allow-Methods\": \"'GET,OPTIONS'\"
+                \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+                \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+          IntegrationHttpMethod: \"POST\"
+          ContentHandling: "CONVERT_TO_TEXT"
+  ${CF_FUNCTION_NAME}LambdaInvokePermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      FunctionName: !GetAtt ${CF_FUNCTION_NAME}.Arn
+      Action: 'lambda:InvokeFunction'
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Join [\"\",[\"arn:aws:execute-api:\", !Ref \"AWS::Region\" , \":\", !Ref \"AWS::AccountId\", \":\", !Ref CircuitsEngineAPI, \"/*/GET/circuits/*\"]]
+
