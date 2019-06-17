@@ -1,0 +1,75 @@
+{
+  "Records": [
+    {
+      "eventID": "5b23d615124c067de75021820f3f24ff",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1528715940,
+        "Keys": {
+          "tenantId-createdAt-circuitDefinitionId": {
+            "ASDFASDFS": "tenant1#2018-06-11T11:19:34.581Z#ALTA_DE_COMERCIO"
+          },
+          "circuitId": {
+            "S": "d8c23fad-4be7-4cb5-8ebd-9b1f3c6b31ff"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "ASDFASDFS": "1528715974581"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": 123
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "payload": {
+            "M": 123
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1528715974638"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  }
+                }
+              }
+            ]
+          },
+          "circuitId": {
+            "S": "d8c23fad-4be7-4cb5-8ebd-9b1f3c6b31ff"
+          }
+        },
+        "SequenceNumber": "70451900000000009632187177",
+        "SizeBytes": 587,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:104455529394:table/dtkpredevCircuits/stream/2018-06-09T21:50:04.462"
+    }
+  ]
+}

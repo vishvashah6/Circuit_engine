@@ -1,0 +1,254 @@
+[
+  {
+    "createdAt": "2018-06-11T17:01:20.988Z",
+    "tenantId-createdAt-circuitDefinitionId": "tenant1#2018-06-11T17:01:20.988Z#ALTA_DE_COMERCIO",
+    "createdByUser": "user1",
+    "currentStatus": "CREATED",
+    "payload": {
+      "datos_de_comercio": {
+        "address": {
+          "extended_address": "AV. Mitre 2338 Munro",
+          "city": "MUNRO",
+          "jurisdiction": "Vicente Lopez",
+          "country_name": "ARGENTINA",
+          "street_number": "2338",
+          "floor": "PB",
+          "postal_code": "6000",
+          "region": "BUENOS AIRES",
+          "location_number": "1",
+          "location_type": "Local",
+          "street_name": "Av. Mitre"
+        },
+        "entity_type": "legal_entity",
+        "documents": {
+          "D1": {
+            "files": [
+              {
+                "document": {
+                  "mime_type": "text/plain",
+                  "description": "desc1",
+                  "classification": "clasi1",
+                  "url": "htttp://.....",
+                  "document_type": "tipo1"
+                },
+                "sort_order": "1"
+              }
+            ]
+          }
+        },
+        "address_id": "1",
+        "existing_customer": true,
+        "phone_number": "47770000",
+        "company_or_owner_name": "ONE STEP ARGENTINA S.A.",
+        "customer_id": "30-70798420-8",
+        "email": "email@mail.com",
+        "phone_area_code": "011"
+      },
+      "datos_del_establecimiento": [
+        {
+          "fancy_name": "ONE STEP WOMEN",
+          "address": {
+            "extended_address": "AV. Mitre 2338 Munro",
+            "province": "BUENOS AIRES",
+            "city": "MUNRO",
+            "jurisdiction": "Vicente Lopez",
+            "country_name": "ARGENTINA",
+            "street_number": "2338",
+            "floor": "PB",
+            "postal_code": "6000",
+            "location_number": "1",
+            "location_type": "Local",
+            "street_name": "Av. Mitre"
+          },
+          "document_number": 12123456,
+          "full_name": "Pedro Ariel Gonzalez",
+          "use_same_payment_preferences_as_merchant": false,
+          "city": "Ciudad de Buenos Aires",
+          "payment_preferences": {
+            "credit_card_payments_account_first_data": "12312312312",
+            "debit_card_payments_account_first_data": "34534534534",
+            "collect_after_48_hours": true,
+            "prisma": false,
+            "days": 2,
+            "first_data": true,
+            "credit_card_payments_account_visa": "12312312312",
+            "branch": "Sucursal Caballito"
+          },
+          "commerce_number": "1023",
+          "use_same_address_as_merchant": false,
+          "email": "pedro@mail.com",
+          "document_type": "DNI"
+        },
+        {
+          "fancy_name": "ONE STEP WOMEN",
+          "document_number": 12123456,
+          "full_name": "Pedro Ariel Gonzalez",
+          "use_same_payment_preferences_as_merchant": true,
+          "city": "Ciudad de Buenos Aires",
+          "commerce_number": "1023",
+          "use_same_address_as_merchant": true,
+          "email": "pedro@mail.com",
+          "document_type": "DNI"
+        }
+      ],
+      "datos_impositivos": {
+        "iva_tax_type": "Inscripto",
+        "cuit": "30707984208",
+        "iibb_tax_registration_number": "12345678900",
+        "main_activity": {
+          "name": "Servicio de TRANSPORTE automotor urbano y suburbano regular de pasajeros",
+          "id": "492110",
+          "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES"
+        },
+        "documents": {
+          "D16": [
+            {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc2",
+                "classification": "clasi1",
+                "url": "htttp://.....",
+                "document_type": "tipo2"
+              },
+              "sort_order": "2"
+            }
+          ],
+          "D15": [
+            {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc1",
+                "classification": "clasi1",
+                "url": "htttp://.....",
+                "document_type": "tipo1"
+              },
+              "sort_order": "1"
+            }
+          ],
+          "D17": [
+            {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc3",
+                "classification": "clasi3",
+                "url": "htttp://.....",
+                "document_type": "tipo3"
+              },
+              "sort_order": "3"
+            }
+          ]
+        },
+        "iibb_tax_type": "Inscripto"
+      },
+      "datos_de_firmantes": [
+        {
+          "profession": "Lawyer",
+          "address": {
+            "extended_address": "AV. Mitre 2338 Munro",
+            "province": "BUENOS AIRES",
+            "city": "MUNRO",
+            "jurisdiction": "Vicente Lopez",
+            "country_name": "ARGENTINA",
+            "street_number": "2338",
+            "floor": "PB",
+            "postal_code": "6000",
+            "location_number": "1",
+            "location_type": "Local",
+            "street_name": "Av. Mitre"
+          },
+          "document_number": "4606044",
+          "documents": {
+            "D30": {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc1",
+                "classification": "clasi1",
+                "url": "http://.....",
+                "document_type": "tipo1"
+              },
+              "sort_order": "2"
+            },
+            "D4": {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc1",
+                "classification": "clasi1",
+                "url": "http://.....",
+                "document_type": "tipo1"
+              },
+              "sort_order": "1"
+            }
+          },
+          "area_code": "011",
+          "obliged_person": "NO",
+          "PEP": "NO",
+          "phone_number": "11114444",
+          "legal_name": "HAHN MARIA INES",
+          "issuing_authority_country": "Argentina",
+          "email": "a@a.com",
+          "document_type": "DNI"
+        },
+        {
+          "profession": "Lawyer",
+          "address": {
+            "extended_address": "AV. Mitre 2338 Munro",
+            "province": "BUENOS AIRES",
+            "city": "MUNRO",
+            "jurisdiction": "Vicente Lopez",
+            "country_name": "ARGENTINA",
+            "street_number": "2338",
+            "floor": "PB",
+            "postal_code": "6000",
+            "location_number": "1",
+            "location_type": "Local",
+            "street_name": "Av. Mitre"
+          },
+          "document_number": "123123123123",
+          "documents": {
+            "D30": {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc1",
+                "classification": "clasi1",
+                "url": "http://.....",
+                "document_type": "tipo1"
+              },
+              "sort_order": "2"
+            },
+            "D4": {
+              "document": {
+                "mime_type": "text/plain",
+                "description": "desc1",
+                "classification": "clasi1",
+                "url": "http://.....",
+                "document_type": "tipo1"
+              },
+              "sort_order": "1"
+            }
+          },
+          "area_code": "011",
+          "obliged_person": "NO",
+          "PEP": "NO",
+          "phone_number": "11114444",
+          "legal_name": "Juan Carlos Perez",
+          "issuing_authority_country": "Argentina",
+          "email": "a@a.com",
+          "document_type": "DNI"
+        }
+      ]
+    },
+    "circuitDefinitionId": "ALTA_DE_COMERCIO",
+    "requestCompleted": false,
+    "createdByRole": "role1",
+    "tenantId": "tenant1",
+    "history": [
+      {
+        "circuitStatus": "CREATED",
+        "startedAt": null,
+        "event": "CIRCUIT_CREATION",
+        "status": 1528736480988
+      }
+    ],
+    "createdByGroup": "group1"
+  }
+]

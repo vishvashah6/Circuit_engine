@@ -1,0 +1,65 @@
+{
+  "resource": "/tasks",
+  "path": "/tasks",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "*/*",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "AR",
+    "Host": "8kxwiwl6oc.execute-api.us-east-1.amazonaws.com",
+    "User-Agent": "curl/7.54.0",
+    "Via": "2.0 330fd6eb0bbac4274bd35a23c4c6e97c.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "qDVEuOnDYGt7r_SYPBpQsoL3_zGF4dbyhMBDsJVoEvtrGBQP5Ed2CQ==",
+    "X-Amzn-Trace-Id": "Root=1-5adabc75-6e0092a8c6956216e9b122df",
+    "X-Forwarded-For": "186.19.11.246, 52.46.43.144",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": {
+    "where": "[{\"currentStatus\":\"CREATED\"}]",
+    "range": "{\"fromDate\":\"2018-01-01\",\"toDate\":\"2018-01-01\"}",
+    "max_results": "20",
+    "page": "1",
+    "text_search": "asd"
+  },
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "authorizer": {
+      "credentials": "{\"username\":\"gaston@btekstudio1.onmicrosoft.com\",\"roles\":[\"COMERCIOS_SUCURSAL_OFICIAL\"]}",
+      "principalId": "gaston@btekstudio1.onmicrosoft.com",
+      "protocols": "[{\"resource\":\"circuit_engine:/status\",\"actions\":[\"GET\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/status\",\"actions\":[\"POST\"],\"effect\":\"deny\"},{\"resource\":\"circuit_engine:/circuits/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\",\"conditions\":[{\"ForAnyValue:StringEquals\":{\"assignedToGroup\":\"group1\",\"createdByGroup\":\"group1\"}}],\"views\":{\"view1\":{\"default\":true,\"fields\":{\"attachments\":true,\"circuitId\":false,\"creditCard\":\"#mask\"}}},\"factors\":{\"mfa\":{\"require\":true},\"sourceIp\":{\"IpAddress\":\"200.0.0.2/14\",\"NotIpAddress\":\"2.3.3.3/12\"}}},{\"resource\":\"circuit_engine:/circuits\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\",\"conditions\":[{\"ForAnyValue:StringEquals\":{\"assignedToGroup\":\"group1\",\"createdByGroup\":\"group1\"}}],\"views\":{\"view1\":{\"default\":true,\"fields\":{\"attachments\":true,\"circuitId\":false,\"creditCard\":\"#mask\"}}},\"factors\":{\"mfa\":{\"require\":true},\"sourceIp\":{\"IpAddress\":\"200.0.0.2/14\",\"NotIpAddress\":\"2.3.3.3/12\"}}},{\"resource\":\"circuit_engine:/tasks/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/tasks\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\",\"conditions\":[{\"ForAnyValue:StringEquals\":{\"assignedToGroup\":\"group1\",\"createdByGroup\":\"group1\"}}],\"views\":{\"view1\":{\"default\":true,\"fields\":{\"attachments\":true,\"circuitId\":false,\"creditCard\":\"#mask\"}}},\"factors\":{\"mfa\":{\"require\":true},\"sourceIp\":{\"IpAddress\":\"200.0.0.2/14\",\"NotIpAddress\":\"2.3.3.3/12\"}}},{\"resource\":\"circuit_engine:/task_definitions/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/circuit_definitions/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"}]"
+    },
+    "resourceId": "m6g1h0",
+    "resourcePath": "/tasks",
+    "httpMethod": "GET",
+    "extendedRequestId": "FrJibHUyoAMFguA=",
+    "requestTime": "21/Apr/2018:04:22:13 +0000",
+    "path": "/test/tasks",
+    "accountId": "291241680294",
+    "protocol": "HTTP/1.1",
+    "stage": "test",
+    "requestTimeEpoch": 1524284533938,
+    "requestId": "91532a08-451b-11e8-88c9-4b327fdf9d56",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "186.19.11.246",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "curl/7.54.0",
+      "user": null
+    },
+    "apiId": "8kxwiwl6oc"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

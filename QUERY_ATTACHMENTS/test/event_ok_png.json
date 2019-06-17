@@ -1,0 +1,61 @@
+{
+  "resource": "/circuits/{circuitId}/attachments/{attachmentId}",
+  "path": "/circuit_engine/circuits/6bb105e9-3bdb-4fe2-8542-becef881f944/attachments/5aae9ff3-8849-465d-b9e4-49ce4b7dc460.png",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9,es;q=0.8,no;q=0.7,nb;q=0.6,ja;q=0.5",
+    "cache-control": "max-age=0",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "AR",
+    "Host": "dtkpredev-api.comercios.co",
+    "upgrade-insecure-requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    "Via": "2.0 ff670736ff9d8f36c1eb930bce28f658.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "wdPmhsaVX38GkbprQiyIsSbMu6ZjpijHvEIghJ7ZBU2rJ75g-17jYg==",
+    "X-Amzn-Trace-Id": "Root=1-5b4277c4-e5a9a8df3e54fbf178e8706d",
+    "X-Forwarded-For": "186.19.11.246, 52.46.43.144",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": "",
+  "pathParameters": {
+    "circuitId": "6bb105e9-3bdb-4fe2-8542-becef881f944",
+    "attachmentId": "5aae9ff3-8849-465d-b9e4-49ce4b7dc460.png"
+  },
+  "stageVariables": "",
+  "requestContext": {
+    "resourceId": "jz4q2w",
+    "resourcePath": "/circuits/{circuitId}/attachments/{attachmentId}",
+    "httpMethod": "GET",
+    "extendedRequestId": "JuemqEloIAMFx3Q=",
+    "requestTime": "08/Jul/2018:20:44:52 +0000",
+    "path": "/circuit_engine/circuits/6bb105e9-3bdb-4fe2-8542-becef881f944/attachments/5aae9ff3-8849-465d-b9e4-49ce4b7dc460.png",
+    "accountId": "104455529394",
+    "protocol": "HTTP/1.1",
+    "stage": "dtkpredev",
+    "requestTimeEpoch": 1531082692223,
+    "requestId": "c36bda37-82ef-11e8-bf6b-57e76c88811d",
+    "identity": {
+      "cognitoIdentityPoolId": "",
+      "accountId": "",
+      "cognitoIdentityId": "",
+      "caller": "",
+      "sourceIp": "186.19.11.246",
+      "accessKey": "",
+      "cognitoAuthenticationType": "",
+      "cognitoAuthenticationProvider": "",
+      "userArn": "",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+      "user": ""
+    },
+    "apiId": "2lru1e6sic"
+  },
+  "body": "",
+  "isBase64Encoded": false
+}

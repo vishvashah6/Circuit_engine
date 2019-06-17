@@ -1,0 +1,25 @@
+{
+  "name": "CIRCUITS_ENGINE_QUERY_CIRCUITS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "query.js",
+  "scripts": {
+    "test": "npm link \"circuits-engine\" && npm link \"circuits-engine-api-helper\" && MOCHA_FILE=$WORKSPACE/junit/CIRCUITS_ENGINE_QUERY_CIRCUITS.xml NODE_ENV=test_mock nyc --reporter=cobertura --reporter=lcov --report-dir=$WORKSPACE/coverage/CIRCUITS_ENGINE_QUERY_CIRCUITS ./node_modules/mocha/bin/mocha --reporter mocha-junit-reporter test/*",
+    "test-local": "NODE_ENV=test_mock nyc --reporter=html ./node_modules/mocha/bin/mocha test/*"
+  },
+  "author": "Gaston Pisacco <gaston@droptek.com>",
+  "dependencies": {
+    "hal": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "dotenv": "^5.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "mocha-junit-reporter": "^1.17.0",
+    "nock": "^9.2.5",
+    "async": "^2.6.0",
+    "nyc": "^11.7.1",
+    "proxyquire": "^2.0.1"
+  }
+}

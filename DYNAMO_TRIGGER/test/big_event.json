@@ -1,0 +1,252 @@
+{
+  "Records": [
+    {
+      "eventID": "cde0067358a903408dfa0f24413e9997",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1528795980,
+        "Keys": {
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-06-12T09:33:51.881Z#ALTA_DE_COMERCIO"
+          },
+          "circuitId": {
+            "S": "c0cc5f79-47bb-4e0a-bc6d-3e9d8c188e80"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "N": "1528796031881"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-06-12T09:33:51.881Z#ALTA_DE_COMERCIO"
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "payload": {
+            "M": {
+              "preferencias_de_pago": {
+                "M": {
+                  "master_payment_account_number": {
+                    "S": "CC-60007658"
+                  },
+                  "existing_customer": {
+                    "BOOL": true
+                  },
+                  "branch": {
+                    "M": {
+                      "code": {
+                        "S": "6"
+                      },
+                      "description": {
+                        "S": "QUILMES OESTE"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  },
+                  "status": {
+                    "N": "1528796031882"
+                  }
+                }
+              }
+            ]
+          },
+          "circuitId": {
+            "S": "c0cc5f79-47bb-4e0a-bc6d-3e9d8c188e80"
+          }
+        },
+        "SequenceNumber": "75401200000000000989400038",
+        "SizeBytes": 611,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:104455529394:table/dtkpredevCircuits/stream/2018-06-09T21:50:04.462"
+    },
+
+    {
+      "eventID": "cfde2716f7e95b41c56ddac547149108",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1528721160,
+        "Keys": {
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-06-11T12:46:43.060Z#ALTA_DE_COMERCIO"
+          },
+          "circuitId": {
+            "S": "7307f5e0-2505-4842-8800-7f28451e1c62"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "N": "1528721203060"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-06-11T12:46:43.060Z#ALTA_DE_COMERCIO"
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "payload": {
+            "M": {
+              "preferencias_de_pago": {
+                "M": {
+                  "master_payment_account_number": {
+                    "S": "ES76-10070024-02391591800"
+                  },
+                  "existing_customer": {
+                    "BOOL": true
+                  }
+                }
+              }
+            }
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1528721203060"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_UPDATED"
+                  },
+                  "status": {
+                    "N": "1528721206859"
+                  }
+                }
+              }
+            ]
+          },
+          "circuitId": {
+            "S": "7307f5e0-2505-4842-8800-7f28451e1c62"
+          }
+        },
+        "OldImage": {
+          "createdAt": {
+            "N": "1528721203060"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-06-11T12:46:43.060Z#ALTA_DE_COMERCIO"
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "payload": {
+            "M": {
+              "preferencias_de_pago": {
+                "M": {
+                  "master_payment_account_number": {
+                    "S": "ES76-10070024-02391591800"
+                  },
+                  "existing_customer": {
+                    "BOOL": true
+                  }
+                }
+              }
+            }
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1528721203060"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  }
+                }
+              }
+            ]
+          },
+          "circuitId": {
+            "S": "7307f5e0-2505-4842-8800-7f28451e1c62"
+          }
+        },
+        "SequenceNumber": "70452800000000009634243265",
+        "SizeBytes": 1103,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:104455529394:table/dtkpredevCircuits/stream/2018-06-09T21:50:04.462"
+    }
+  ]
+}

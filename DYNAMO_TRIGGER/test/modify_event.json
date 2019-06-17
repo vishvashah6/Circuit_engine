@@ -1,0 +1,173 @@
+{
+  "Records": [
+    {
+      "eventID": "f97674d48c2e24e905acbb143ec8d6fd",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1532723820,
+        "Keys": {
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-07-27T20:37:39.366Z#ALTA_DE_COMERCIO"
+          },
+          "circuitId": {
+            "S": "f6a8d3f0-2a30-421c-927e-aba2e9dac99a"
+          }
+        },
+        "NewImage": {
+          "attachments": {
+            "M": {
+              "5a89f37a-ddb3-4b70-9d50-d0aeec720416.jpg": {
+                "M": {
+                  "url": {
+                    "S": "5a89f37a-ddb3-4b70-9d50-d0aeec720416.jpg"
+                  }
+                }
+              }
+            }
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1532723859366"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1532723879226"
+                  },
+                  "event": {
+                    "S": "FILE_UPLOADED"
+                  }
+                }
+              }
+            ]
+          },
+          "createdByGroup": {
+            "S": "group1"
+          },
+          "circuitId": {
+            "S": "f6a8d3f0-2a30-421c-927e-aba2e9dac99a"
+          },
+          "createdAt": {
+            "N": "1532723859366"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-07-27T20:37:39.366Z#ALTA_DE_COMERCIO"
+          },
+          "payload": {
+            "M": {
+              "datos_impositivos": {
+                "M": {
+                  "cuit": {
+                    "S": "00000000000"
+                  }
+                }
+              }
+            }
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          }
+        },
+        "OldImage": {
+          "attachments": {
+            "M": {}
+          },
+          "createdByUser": {
+            "S": "user1"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "requestCompleted": {
+            "BOOL": false
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "circuitStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1532723859366"
+                  },
+                  "event": {
+                    "S": "CIRCUIT_CREATION"
+                  }
+                }
+              }
+            ]
+          },
+          "createdByGroup": {
+            "S": "group1"
+          },
+          "circuitId": {
+            "S": "f6a8d3f0-2a30-421c-927e-aba2e9dac99a"
+          },
+          "createdAt": {
+            "N": "1532723859366"
+          },
+          "tenantId-createdAt-circuitDefinitionId": {
+            "S": "tenant1#2018-07-27T20:37:39.366Z#ALTA_DE_COMERCIO"
+          },
+          "payload": {
+            "M": {
+              "datos_impositivos": {
+                "M": {
+                  "cuit": {
+                    "S": "00000000000"
+                  }
+                }
+              }
+            }
+          },
+          "circuitDefinitionId": {
+            "S": "ALTA_DE_COMERCIO"
+          },
+          "createdByRole": {
+            "S": "role1"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          }
+        },
+        "SequenceNumber": "103281700000000060659290456",
+        "SizeBytes": 1138,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:104455529394:table/dtkpredevCircuits/stream/2018-07-06T02:20:54.050"
+    }
+  ]
+}

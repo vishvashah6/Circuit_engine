@@ -1,0 +1,998 @@
+{
+  "TableName": "devgastonCircuitsDefinitions",
+  "Item": {
+    "circuitDefinitionId": "circuit1",
+    "circuitName": "circuit1",
+    "createdByRole": "circuitsDefinitor@tenant1",
+    "createdByUser": "user1@tenant1",
+    "searchKeys": [
+      "datos_de_comercio.company_or_owner_name"
+    ],
+    "payloadSchemas": {
+      "datos_de_comercio": {
+        "schema": {
+          "title": "datos_comercio",
+          "$schema": "http://json-schema.org/schema#",
+          "$id": "http://example.com/example.json",
+          "type": "object",
+          "properties": {
+            "company_or_owner_name": {
+              "type": "string"
+            },
+            "address": {
+              "$ref": "#/definitions/address"
+            },
+            "cliente_unico_address_id": {
+              "type": "string"
+            },
+            "cliente_unico_id": {
+              "type": "string"
+            },
+            "documents": {
+              "type": "object",
+              "properties": {
+                "entity_type": {
+                  "type": "string",
+                  "enum": [
+                    "legal_entity",
+                    "person"
+                  ]
+                },
+                "D1": {
+                  "type": "object",
+                  "description": "Estatuto de Formacion",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                },
+                "D4": {
+                  "type": "object",
+                  "description": "Documento Nacional",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "select": {
+                "$data": "1/entity_type"
+              },
+              "selectCases": {
+                "legal_entity": {
+                  "required": [
+                    "D1"
+                  ]
+                },
+                "person": {
+                  "required": [
+                    "D4"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "company_or_owner_name",
+            "address",
+            "documents",
+            "entity_type"
+          ],
+          "definitions": {
+            "address": {
+              "$schema": "http://json-schema.org/schema#",
+              "description": "Address Matching 'Cliente Unico Backend' Format ",
+              "type": "object",
+              "properties": {
+                "street_number": {
+                  "type": "string"
+                },
+                "location_type": {
+                  "type": "string",
+                  "enum": [
+                    "Local",
+                    "Oficina",
+                    "Departamento"
+                  ]
+                },
+                "extended_address": {
+                  "type": "string"
+                },
+                "floor": {
+                  "type": "string"
+                },
+                "department_number": {
+                  "type": "string"
+                },
+                "street_address": {
+                  "type": "string"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postal_code": {
+                  "type": "string"
+                },
+                "country_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "street_address",
+                "street_number",
+                "postal_code",
+                "locality",
+                "region",
+                "country_name"
+              ]
+            },
+            "attachment": {
+              "$schema": "http://json-schema.org/hyper-schema#",
+              "description": "Document Attachment",
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "mime_type": {
+                  "type": "string"
+                },
+                "classification": {
+                  "type": "string"
+                },
+                "document_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "mime_type"
+              ]
+            }
+          }
+        }
+      },
+      "datos_impositivos": {
+        "schema": {
+          "title": "datos_impositivos",
+          "$schema": "http://json-schema.org/schema#",
+          "$id": "http://example.com/example1.json",
+          "type": "object",
+          "properties": {
+            "entity_type": {
+              "type": "string",
+              "enum": [
+                "legal_entity",
+                "person"
+              ]
+            },
+            "main_activity": {
+              "type": "object",
+              "enum": [
+                {
+                  "id": "492110",
+                  "name": "Servicio de TRANSPORTE automotor urbano y suburbano regular de pasajeros",
+                  "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES"
+                },
+                {
+                  "id": "492130",
+                  "name": "Servicio de TRANSPORTE escolar (incluye el servicio de TRANSPORTE para colonias de vacaciones y clubes)",
+                  "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES"
+                },
+                {
+                  "id": "511000",
+                  "name": "Servicio de TRANSPORTE aéreo de pasajeros",
+                  "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES"
+                },
+                {
+                  "id": "491110",
+                  "name": "Servicio de transporte ferroviario urbano y suburbano de pasajeros (incluye el servicio de subterráneo y de premetro)",
+                  "group": "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES"
+                },
+                {
+                  "id": "841100",
+                  "name": "Servicios Generales de Administración Pública.",
+                  "group": "ORGANISMO PUBLICO"
+                },
+                {
+                  "id": "661930",
+                  "name": "Servicios de sociedades calificadoras de riesgos financieros;Servicios de sociedades calificadoras de riesgos financieros",
+                  "group": "ACTIVIDADES Y RUBROS DE RIESGO"
+                },
+                {
+                  "id": "662010",
+                  "name": "Servicios de evaluación de riesgos y daños;Servicios de evaluación de riesgos y daños;",
+                  "group": "ACTIVIDADES Y RUBROS DE RIESGO"
+                },
+                {
+                  "id": "643001",
+                  "name": "Servicios de fideicomisos;Servicios de fideicomisos",
+                  "group": "FIDEICOMISO"
+                },
+                {
+                  "id": "651110",
+                  "name": "Servicios de seguros de salud;Servicios de seguros de salud (Incluye medicina prepaga y mutuales de salud)",
+                  "group": "COMPANIAS DE SEGURO"
+                },
+                {
+                  "id": "651120",
+                  "name": "Servicios de seguros de vida;Servicios de seguros de vida (Incluye los seguros de vida, retiro y sepelio)",
+                  "group": "COMPANIAS DE SEGURO"
+                },
+                {
+                  "id": "651130",
+                  "name": "Servicios de seguros personales excepto  los de salud y de vida;Servicios de seguros personales excepto  los de salud y de vida (Incluye los seguros para viajes)",
+                  "group": "COMPANIAS DE SEGURO"
+                },
+                {
+                  "id": "651210",
+                  "name": "Servicios de aseguradoras de riesgo de trabajo (ART);Servicios de aseguradoras de riesgo de trabajo (ART)",
+                  "group": "COMPANIAS DE SEGURO"
+                },
+                {
+                  "id": "651220",
+                  "name": "Servicios de seguros patrimoniales excepto los de las aseguradoras de riesgo de trabajo (ART);Servicios de seguros patrimoniales excepto los de las aseguradoras de riesgo de trabajo (ART)",
+                  "group": "COMPANIAS DE SEGURO"
+                },
+                {
+                  "id": "123123",
+                  "name": "OTROS",
+                  "group": "OTROS"
+                }
+              ]
+            },
+            "cuit": {
+              "type": "string",
+              "minLength": 11,
+              "maxLength": 11,
+              "tooltip": "11 digitos sin espacios ni guiones"
+            },
+            "tipo_contrib_iva": {
+              "type": "string",
+              "enum": [
+                "Inscripto",
+                "IVA Exento",
+                "Monotributo",
+                "Responsable IVA",
+                "No categorizado"
+              ],
+              "tooltip": "Es una descripción de tipo contribución"
+            },
+            "tipo_ingresos_brutos": {
+              "type": "string",
+              "enum": [
+                "Inscripto",
+                "IVA Exento",
+                "Monotributo",
+                "Responsable IVA",
+                "No categorizado"
+              ],
+              "tooltip": "descripción"
+            },
+            "nro_insp_ing_brutos": {
+              "type": "string",
+              "minLength": 11,
+              "maxLength": 11,
+              "tooltip": "hay que averiguar la longitud"
+            }
+          },
+          "documents": {
+            "type": "object",
+            "properties": {
+              "D7": {
+                "type": "object",
+                "description": "Copia del último balance auditado por contador publico y certificado por el Consejo Profesional de Ciencias Económicas que corresponda",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D9": {
+                "type": "object",
+                "description": "Copia del acto administrativo de designación del funcionario interviniente.",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D10": {
+                "type": "object",
+                "description": "Términos y Condiciones del Programa de Tarjetas Visa (suscripto en todas sus hojas)",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D11": {
+                "type": "object",
+                "description": "Copia del Contrato de Locación o Título de Propiedad.",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D12": {
+                "type": "object",
+                "description": "Copia de la Habilitación Municipal (en caso que corresponda).",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D13": {
+                "type": "object",
+                "description": "Copia de la Matrícula respectiva (si es profesional matriculado).",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D14": {
+                "type": "object",
+                "description": "Copia de la Inscripción en el Ente Regulador de la actividad principal (en caso que corresponda).",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D15": {
+                "type": "object",
+                "description": "Copia de la Certificación de Secretaría de Turismo de la Nación, donde informe Idoneidad en Turismo",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D16": {
+                "type": "object",
+                "description": "Constancia de inscripción en IATA",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D17": {
+                "type": "object",
+                "description": "Copia del Seguro de Caución ó Inscripción en la CNRT (para transportes terrestres)",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D18": {
+                "type": "object",
+                "description": "Copia de la inscripción en la Superintendencia de Seguros de la Nación",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D19": {
+                "type": "object",
+                "description": "Copia del Contrato de Locación o Titulo de Propiedad",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D20": {
+                "type": "object",
+                "description": "Copia de la Habilitación Municipal (cuando corresponda)",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D21": {
+                "type": "object",
+                "description": "Copia de Licencia expedida por el ente regulador",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D22": {
+                "type": "object",
+                "description": "Copia del Contrato de Concesión (cuando corresponda)",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D23": {
+                "type": "object",
+                "description": "Certificado Policial de domicilio de los titulares/ Apoderados",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D24": {
+                "type": "object",
+                "description": "Copias de los últimos tres pagos de autónomos, Monotributo o IIBB",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D25": {
+                "type": "object",
+                "description": "Copia de la última declaración Jurada mensual de Cargas Sociales e IVA",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D26": {
+                "type": "object",
+                "description": "Copia de la Declaración Jurada de IIBB y Ganancias",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D27": {
+                "type": "object",
+                "description": "Fotografía del Local",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              },
+              "D28": {
+                "type": "object",
+                "description": "Copia certificada del Contrato de Fideicomiso",
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sort_order": {
+                        "type": "string"
+                      },
+                      "document": {
+                        "$ref": "#/definitions/attachment"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "select": {
+              "$data": "1/main_activity/group"
+            },
+            "selectCases": {
+              "ORGANISMO PUBLICO": {
+                "required": [
+                  "D9"
+                ]
+              },
+              "FIDEICOMISO": {
+                "required": [
+                  "D7"
+                ]
+              },
+              "ACTVIDADES Y RUBROS DE RIESGO": {
+                "required": [
+                  "D10",
+                  "D11",
+                  "D12",
+                  "D13",
+                  "D14"
+                ]
+              },
+              "AGENCIAS DE TURISMO / LINEAS AEREAS / COMPAÑIAS DE TRANSPORTES": {
+                "required": [
+                  "D15",
+                  "D16",
+                  "D17"
+                ]
+              },
+              "COMPANIAS DE SEGURO": {
+                "required": [
+                  "D18"
+                ]
+              },
+              "CASINOS Y RUBROS DE AZAR": {
+                "required": [
+                  "D19",
+                  "D20",
+                  "D21",
+                  "D22",
+                  "D23",
+                  "D24",
+                  "D25",
+                  "D26",
+                  "D27"
+                ]
+              }
+            }
+          },
+          "required": [
+            "main_activity",
+            "cuit",
+            "tipo_contrib_iva",
+            "tipo_ingresos_brutos",
+            "nro_insp_ing_brutos"
+          ],
+          "definitions": {
+            "address": {
+              "$schema": "http://json-schema.org/schema#",
+              "description": "Address Matching 'Cliente Unico Backend' Format ",
+              "type": "object",
+              "properties": {
+                "street_number": {
+                  "type": "string"
+                },
+                "location_type": {
+                  "type": "string",
+                  "enum": [
+                    "Local",
+                    "Oficina",
+                    "Departamento"
+                  ]
+                },
+                "extended_address": {
+                  "type": "string"
+                },
+                "floor": {
+                  "type": "string"
+                },
+                "department_number": {
+                  "type": "string"
+                },
+                "street_address": {
+                  "type": "string"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postal_code": {
+                  "type": "string"
+                },
+                "country_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "street_address",
+                "street_number",
+                "postal_code",
+                "locality",
+                "region",
+                "country_name"
+              ]
+            },
+            "attachment": {
+              "$schema": "http://json-schema.org/hyper-schema#",
+              "description": "Document Attachment",
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "mime_type": {
+                  "type": "string"
+                },
+                "classification": {
+                  "type": "string"
+                },
+                "document_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "mime_type"
+              ]
+            }
+          }
+        }
+      },
+      "datos_de_comercio2": {
+        "schema": {
+          "title": "datos_comercio",
+          "$schema": "http://json-schema.org/schema#",
+          "$id": "http://example.com/example.json",
+          "type": "object",
+          "properties": {
+            "company_or_owner_name": {
+              "type": "string"
+            },
+            "address": {
+              "$ref": "#/definitions/address"
+            },
+            "cliente_unico_address_id": {
+              "type": "string"
+            },
+            "cliente_unico_id": {
+              "type": "string"
+            },
+            "documents": {
+              "type": "object",
+              "properties": {
+                "entity_type": {
+                  "type": "string",
+                  "enum": [
+                    "legal_entity",
+                    "person"
+                  ]
+                },
+                "D1": {
+                  "type": "object",
+                  "description": "Estatuto de Formacion",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                },
+                "D4": {
+                  "type": "object",
+                  "description": "Documento Nacional",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "select": {
+                "$data": "1/entity_type"
+              },
+              "selectCases": {
+                "legal_entity": {
+                  "required": [
+                    "D1"
+                  ]
+                },
+                "person": {
+                  "required": [
+                    "D4"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "company_or_owner_name",
+            "address",
+            "documents",
+            "entity_type"
+          ],
+          "definitions": {
+            "address": {
+              "$schema": "http://json-schema.org/schema#",
+              "description": "Address Matching 'Cliente Unico Backend' Format ",
+              "type": "object",
+              "properties": {
+                "street_number": {
+                  "type": "string"
+                },
+                "location_type": {
+                  "type": "string",
+                  "enum": [
+                    "Local",
+                    "Oficina",
+                    "Departamento"
+                  ]
+                },
+                "extended_address": {
+                  "type": "string"
+                },
+                "floor": {
+                  "type": "string"
+                },
+                "department_number": {
+                  "type": "string"
+                },
+                "street_address": {
+                  "type": "string"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postal_code": {
+                  "type": "string"
+                },
+                "country_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "street_address",
+                "street_number",
+                "postal_code",
+                "locality",
+                "region",
+                "country_name"
+              ]
+            },
+            "attachment": {
+              "$schema": "http://json-schema.org/hyper-schema#",
+              "description": "Document Attachment",
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "mime_type": {
+                  "type": "string"
+                },
+                "classification": {
+                  "type": "string"
+                },
+                "document_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "mime_type"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "status": "active",
+    "stepFunctionARN": "arn:aws:states:us-east-1:undefined:stateMachine:HelloWorld",
+    "tenantId": "tenant1"
+  }
+}

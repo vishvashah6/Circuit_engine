@@ -1,0 +1,455 @@
+{
+  "Records": [
+    {
+      "eventID": "92289656e33d06905805d67ccc056539",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1532725140,
+        "Keys": {
+          "tenantId-createdAt-circuitId": {
+            "S": "tenant1#2018-07-27T20:55:33.085Z#02ca7922-7fc8-429a-8257-24da0ade4766"
+          },
+          "taskId": {
+            "S": "03c10f29-ead7-4a09-9c5c-ca1311dad146"
+          }
+        },
+        "NewImage": {
+          "tenantId-createdAt-circuitId": {
+            "S": "tenant1#2018-07-27T20:55:33.085Z#02ca7922-7fc8-429a-8257-24da0ade4766"
+          },
+          "createdAt": {
+            "N": "1532724933085"
+          },
+          "currentStatus": {
+            "S": "CREATED"
+          },
+          "payload": {
+            "M": {
+              "attachments": {
+                "M": {}
+              },
+              "createdByUser": {
+                "S": "user1"
+              },
+              "currentStatus": {
+                "S": "CREATED"
+              },
+              "requestCompleted": {
+                "BOOL": true
+              },
+              "history": {
+                "L": [
+                  {
+                    "M": {
+                      "circuitStatus": {
+                        "S": "CREATED"
+                      },
+                      "startedAt": {
+                        "N": "1532724883685"
+                      },
+                      "event": {
+                        "S": "CIRCUIT_CREATION"
+                      }
+                    }
+                  },
+                  {
+                    "M": {
+                      "circuitStatus": {
+                        "S": "CREATED"
+                      },
+                      "event": {
+                        "S": "CIRCUIT_UPDATED"
+                      },
+                      "status": {
+                        "N": "1532724896545"
+                      }
+                    }
+                  }
+                ]
+              },
+              "createdByGroup": {
+                "S": "group1"
+              },
+              "circuitId": {
+                "S": "02ca7922-7fc8-429a-8257-24da0ade4766"
+              },
+              "createdAt": {
+                "N": "1532724883685"
+              },
+              "tenantId-createdAt-circuitDefinitionId": {
+                "S": "tenant1#2018-07-27T20:54:43.685Z#ALTA_DE_COMERCIO"
+              },
+              "payload": {
+                "M": {
+                  "datos_de_comercio": {
+                    "M": {
+                      "hasActiveCreditProducts": {
+                        "BOOL": false
+                      },
+                      "address": {
+                        "M": {
+                          "province": {
+                            "S": "BUENOS AIRES"
+                          },
+                          "city": {
+                            "S": "SAN JUSTO"
+                          },
+                          "jurisdiction": {
+                            "S": "LA MATANZA"
+                          },
+                          "country_name": {
+                            "S": "ARGENTINA"
+                          },
+                          "street_number": {
+                            "S": "3050"
+                          },
+                          "floor": {
+                            "S": "0"
+                          },
+                          "postal_code": {
+                            "S": "1754"
+                          },
+                          "location_type": {
+                            "S": "Local"
+                          },
+                          "street_name": {
+                            "S": "ALMAFUERTE"
+                          }
+                        }
+                      },
+                      "entity_type": {
+                        "S": "person"
+                      },
+                      "documents": {
+                        "M": {
+                          "D4": {
+                            "M": {
+                              "files": {
+                                "L": [
+                                  {
+                                    "M": {
+                                      "document": {
+                                        "M": {
+                                          "mime_type": {
+                                            "S": "application/pdf"
+                                          },
+                                          "url": {
+                                            "S": "https://s3.amazonaws.com/e11ca07d-1d36-4baa-8deb-84d7c6d3515d/e67a1cf3-b480-4baf-98fb-4bfbf279e147.pdf"
+                                          },
+                                          "document_type": {
+                                            "S": "D4"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "fraudRisk": {
+                        "BOOL": false
+                      },
+                      "name": {
+                        "S": "MUNICIPALIDAD DE LA MATANZA"
+                      },
+                      "existing_customer": {
+                        "BOOL": true
+                      },
+                      "phone_number": {
+                        "S": "####5656"
+                      },
+                      "email": {
+                        "S": "gpisacco@gmail.com"
+                      },
+                      "phone_area_code": {
+                        "S": "011"
+                      }
+                    }
+                  },
+                  "datos_del_establecimiento": {
+                    "L": [
+                      {
+                        "M": {
+                          "fancy_name": {
+                            "S": "sdf"
+                          },
+                          "address": {
+                            "M": {
+                              "province": {
+                                "S": "Buenos Aires"
+                              },
+                              "city": {
+                                "S": "-"
+                              },
+                              "jurisdiction": {
+                                "S": "25 de Mayo"
+                              },
+                              "country_name": {
+                                "S": "Argentina"
+                              },
+                              "street_number": {
+                                "S": "234"
+                              },
+                              "postal_code": {
+                                "S": "-"
+                              },
+                              "location_type": {
+                                "S": "Local"
+                              },
+                              "street_name": {
+                                "S": "sdf"
+                              }
+                            }
+                          },
+                          "document_number": {
+                            "S": "222"
+                          },
+                          "full_name": {
+                            "S": "Gaston Pisacco"
+                          },
+                          "email": {
+                            "S": "gpisacco@gmail.com"
+                          },
+                          "document_type": {
+                            "S": "DNI"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "channel": {
+                    "S": "SUCURSAL"
+                  },
+                  "datos_impositivos": {
+                    "M": {
+                      "iva_tax_type": {
+                        "S": "Inscripto"
+                      },
+                      "cuit": {
+                        "S": "34999257560"
+                      },
+                      "entity_type": {
+                        "S": "person"
+                      },
+                      "iibb_tax_registration_number": {
+                        "S": "34-99925756-0"
+                      },
+                      "main_activity": {
+                        "M": {
+                          "name": {
+                            "S": "OTROS"
+                          },
+                          "id": {
+                            "S": "123123"
+                          },
+                          "group": {
+                            "S": "OTROS"
+                          }
+                        }
+                      },
+                      "iibb_tax_type": {
+                        "S": "Inscripto"
+                      }
+                    }
+                  },
+                  "modalidades_de_adhesion": {
+                    "M": {
+                      "e_commerce": {
+                        "M": {
+                          "csp": {
+                            "BOOL": false
+                          },
+                          "sales_percentage": {
+                            "N": "0"
+                          },
+                          "vbv": {
+                            "BOOL": false
+                          },
+                          "own_system": {
+                            "BOOL": false
+                          }
+                        }
+                      },
+                      "use_auto_debit": {
+                        "BOOL": false
+                      },
+                      "use_telephone_sales": {
+                        "BOOL": false
+                      },
+                      "use_card_present": {
+                        "BOOL": true
+                      },
+                      "use_payment_services": {
+                        "BOOL": false
+                      },
+                      "use_e_commerce": {
+                        "BOOL": false
+                      },
+                      "telephone_sales": {
+                        "M": {
+                          "lapos_web": {
+                            "BOOL": false
+                          },
+                          "lapos_cell": {
+                            "BOOL": false
+                          },
+                          "sales_percentage": {
+                            "N": "0"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "datos_de_firmantes": {
+                    "L": [
+                      {
+                        "M": {
+                          "profession": {
+                            "S": "as"
+                          },
+                          "document_number": {
+                            "S": "7010311"
+                          },
+                          "documents": {
+                            "M": {
+                              "D4": {
+                                "M": {
+                                  "files": {
+                                    "L": [
+                                      {
+                                        "M": {
+                                          "document": {
+                                            "M": {
+                                              "mime_type": {
+                                                "S": "application/pdf"
+                                              },
+                                              "url": {
+                                                "S": "https://s3.amazonaws.com/e11ca07d-1d36-4baa-8deb-84d7c6d3515d/e9bf2b46-8694-471f-91e8-167ebb2dfc2e.pdf"
+                                              },
+                                              "document_type": {
+                                                "S": "D4"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "area_code": {
+                            "S": "11"
+                          },
+                          "obliged_person": {
+                            "S": "NO"
+                          },
+                          "PEP": {
+                            "S": "NO"
+                          },
+                          "phone_number": {
+                            "S": "4152023325"
+                          },
+                          "legal_name": {
+                            "S": "GARCIA JUAN E"
+                          },
+                          "issuing_authority_country": {
+                            "S": "Argentina"
+                          },
+                          "email": {
+                            "S": "gpisacco@gmail.com"
+                          },
+                          "document_type": {
+                            "S": "CUIT"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "preferencias_de_pago": {
+                    "M": {
+                      "master_payment_account_number": {
+                        "S": "CC-270003279"
+                      },
+                      "existing_customer": {
+                        "BOOL": true
+                      },
+                      "branch": {
+                        "M": {
+                          "name": {
+                            "S": "SAN JUSTO"
+                          },
+                          "id": {
+                            "N": "27"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "circuitDefinitionId": {
+                "S": "ALTA_DE_COMERCIO"
+              },
+              "createdByRole": {
+                "S": "role1"
+              },
+              "tenantId": {
+                "S": "tenant1"
+              }
+            }
+          },
+          "slaExpiresAt": {
+            "N": "1564260933085"
+          },
+          "tenantId": {
+            "S": "tenant1"
+          },
+          "history": {
+            "L": [
+              {
+                "M": {
+                  "newStatus": {
+                    "S": "CREATED"
+                  },
+                  "startedAt": {
+                    "N": "1532724933085"
+                  },
+                  "event": {
+                    "S": "TASK_CREATED"
+                  }
+                }
+              }
+            ]
+          },
+          "assignedToGroup": {
+            "S": "CENTRO_DE_ALTAS"
+          },
+          "circuitId": {
+            "S": "02ca7922-7fc8-429a-8257-24da0ade4766"
+          },
+          "taskDefinitionId": {
+            "S": "VALIDAR_TRAMITE"
+          },
+          "taskId": {
+            "S": "03c10f29-ead7-4a09-9c5c-ca1311dad147"
+          },
+          "taskToken": {
+            "S": "AAAAKgAAAAIAAAAAAAAAAcQV28R4t0SWdPNecSLP1/lYiBFVOAH4iIJAh5Hfw0dR+pzVU47/U9HVdQBeUHmj8nQZTE4YnpH0hpa/iqUGMQ/J92s3pcespQp6szlFE7a8R/kfLsIntJNwOSiHR3d+GD8I/x1MTwr5wUOtqaLKn25Qk97YQEJAO0KKgpdVignNEeQ0ZvsSeB1u3YIXsgRz3AFzgTXDbE7F/ZoyrVuUZtYYX7WnztBg4jW4MQzLc2uOmfiIJ9y+lfYq1LClwwZLkVrhp7DZuBcXTQZdr30Ha7VKZfhQA1aq08j80R4wes5WnslnezKDHFbVdNZAzk1QQAIWvWXW17gCs++yH0BCGazthiZ736RnnLiDDG15lCeLM8pRfHCneIPkVYjE1uG7Swx9CT9gm9vjJAAf+Cst8E/skuV0792bTiSEOXIFSVizTzwdDDvcxMuLP2BJpCO991Lb4D8m0G5g5idXtuARnEcW61cajaYhFTukmmZka/IJ5qZ4qbrmqiN7Gn0G5Snz6Bg45VprKbN8oKk8NfT31o7XRsQW4hN+pD+dCTqiqVsUY2aQoe4GJvunm9OM9oO4/VJGajMTnKP+cRdy4nPLCkptJ6D16p/8nvThR7N944PM9j6d5F7PuLYkWwkFDEtTbQ=="
+          }
+        },
+        "SequenceNumber": "103441900000000033020304576",
+        "SizeBytes": 3468,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:104455529394:table/dtkpredevTasks/stream/2018-07-06T02:20:53.295"
+    }
+  ]
+}

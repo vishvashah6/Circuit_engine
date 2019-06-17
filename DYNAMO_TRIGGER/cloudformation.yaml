@@ -1,0 +1,33 @@
+  ${CF_FUNCTION_NAME}:
+    Type: AWS::Serverless::Function
+    Properties:
+      MemorySize: ${MEMORY_SIZE}
+      Timeout: ${TIMEOUT}
+      FunctionName: ${FUNCTION_NAME}
+      Handler: ${HANDLER}
+      Role:
+        Fn::ImportValue:
+          !Sub "\${Environment}-CircuitsEngineRole"
+      CodeUri:
+        Bucket: !Ref DeployBucketName
+        Key: ${FUNCTION_NAME}-${VERSION}.zip
+      Environment:
+        Variables:
+          MD5: ${VERSION}
+          ELASTICSEARCH_URL: !Join ['', ['https://', !GetAtt ElasticSearchService.DomainEndpoint]]
+  CircuitsEventSourceMapping:
+    Type: "AWS::Lambda::EventSourceMapping"
+    DependsOn: \"CircuitsTable\"
+    Properties:
+      BatchSize: 10
+      EventSourceArn: !GetAtt CircuitsTable.StreamArn
+      FunctionName: !GetAtt ${CF_FUNCTION_NAME}.Arn
+      StartingPosition: "LATEST"
+  TasksEventSourceMapping:
+    Type: "AWS::Lambda::EventSourceMapping"
+    DependsOn: \"TasksTable\"
+    Properties:
+      BatchSize: 10
+      EventSourceArn: !GetAtt TasksTable.StreamArn
+      FunctionName: !GetAtt ${CF_FUNCTION_NAME}.Arn
+      StartingPosition: "LATEST"

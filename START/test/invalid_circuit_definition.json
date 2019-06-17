@@ -1,0 +1,186 @@
+{
+  "TableName": "CircuitsDefinitions",
+  "Item": {
+    "circuitDefinitionId": "circuit1",
+    "circuitName": "circuit1",
+    "createdByRole": "circuitsDefinitor@tenant1",
+    "createdByUser": "user1@tenant1",
+    "searchKeys": [
+      "datos_de_comercio.company_or_owner_name"
+    ],
+    "payloadSchemas": {
+      "datos_de_comercio": {
+        "schema": {
+          "title": "datos_comercio",
+          "$schema": "http://json-schema.org/schema#",
+          "$id": "http://example.com/example.json",
+          "type": "object",
+          "properties": {
+            "company_or_owner_name": {
+              "type": "binary"
+            },
+            "address": {
+              "$ref": "#/definitions/address"
+            },
+            "cliente_unico_address_id": {
+              "type": "string"
+            },
+            "cliente_unico_id": {
+              "type": "string"
+            },
+            "documents": {
+              "type": "object",
+              "properties": {
+                "entity_type": {
+                  "type": "string",
+                  "enum": [
+                    "legal_entity",
+                    "person"
+                  ]
+                },
+                "D1": {
+                  "type": "object",
+                  "description": "Estatuto de Formacion",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                },
+                "D4": {
+                  "type": "object",
+                  "description": "Documento Nacional",
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sort_order": {
+                          "type": "string"
+                        },
+                        "document": {
+                          "$ref": "#/definitions/attachment"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "select": {
+                "$data": "1/entity_type"
+              },
+              "selectCases": {
+                "legal_entity": {
+                  "required": [
+                    "D1"
+                  ]
+                },
+                "person": {
+                  "required": [
+                    "D4"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "company_or_owner_name",
+            "address",
+            "documents",
+            "entity_type"
+          ],
+          "definitions": {
+            "address": {
+              "$schema": "http://json-schema.org/schema#",
+              "description": "Address Matching 'Cliente Unico Backend' Format ",
+              "type": "object",
+              "properties": {
+                "street_number": {
+                  "type": "string"
+                },
+                "location_type": {
+                  "type": "string",
+                  "enum": [
+                    "Local",
+                    "Oficina",
+                    "Departamento"
+                  ]
+                },
+                "extended_address": {
+                  "type": "string"
+                },
+                "floor": {
+                  "type": "string"
+                },
+                "department_number": {
+                  "type": "string"
+                },
+                "street_address": {
+                  "type": "string"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postal_code": {
+                  "type": "string"
+                },
+                "country_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "street_address",
+                "street_number",
+                "postal_code",
+                "locality",
+                "region",
+                "country_name"
+              ]
+            },
+            "attachment": {
+              "$schema": "http://json-schema.org/hyper-schema#",
+              "description": "Document Attachment",
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "mime_type": {
+                  "type": "string"
+                },
+                "classification": {
+                  "type": "string"
+                },
+                "document_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "mime_type"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "status": "active",
+    "stepFunctionARN": "arn:aws:states:us-east-1:12:stateMachine:HelloWorld",
+    "tenantId": "tenant1"
+  }
+}

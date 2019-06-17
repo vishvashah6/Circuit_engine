@@ -1,0 +1,62 @@
+{
+  "resource": "/start/{circuitDefinition}",
+  "path": "/start/circuit1",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9,es;q=0.8,no;q=0.7,nb;q=0.6,ja;q=0.5",
+    "cache-control": "no-cache",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "AR",
+    "content-type": "application/json",
+    "Host": "6bvyvavey2.execute-api.us-east-1.amazonaws.com",
+    "origin": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+    "postman-token": "078888ba-c83b-7953-5b2c-7eb578ffafe5",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+    "Via": "2.0 a82521331b708ee8f34f5d2f34b64a77.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "Sj5FUSPpCOWn2vfdXCH0cy3-KWQijbWE0reZ4lwp6GKrUMU2GaqT8g==",
+    "X-Amzn-Trace-Id": "Root=1-5ae9154a-76543aa6e87f37b08f11684e",
+    "X-Forwarded-For": "186.19.11.246, 52.46.43.143",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": null,
+  "pathParameters": {
+    "circuitDefinition": "circuit1"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "594yku",
+    "resourcePath": "/start/{circuitDefinition}",
+    "httpMethod": "POST",
+    "extendedRequestId": "GPBDoFB7oAMFu_g=",
+    "requestTime": "02/May/2018:01:32:58 +0000",
+    "path": "/Dev/start/circuit1",
+    "accountId": "291241680294",
+    "protocol": "HTTP/1.1",
+    "stage": "Dev",
+    "requestTimeEpoch": 1525224778477,
+    "requestId": "bebe0a1f-4da8-11e8-a2b2-7d7724bc6081",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "186.19.11.246",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+      "user": null
+    },
+    "apiId": "6bvyvavey2"
+  },
+  "body": "{\n\t\"circuit_definition_id\": \"circuit1\",\n\t\"payload\": {\n \"datos_de_comercio\": {\n \"company_or_owner_name\": \"Company 1\",\n \"address\": {\n \"street_number\": \"123\",\n \"location_type\": \"Local\",\n \"street_address\": \"Reconquista\",\n \"locality\": \"CABA\",\n \"region\": \"CABA\",\n \"postal_code\": \"1702\",\n \"country_name\": \"Argentina\"\n },\n \"entity_type\": \"person\",\n \"documents\": {\n \"D1\": {\n \"files\": [\n {\n \"sort_order\": 1,\n \"document\": {\n \"url\": \"http://www.tes.com\",\n \"mime_type\": \"image/jpeg\"\n }\n }\n ]\n }\n }\n }\n }\n}",
+  "isBase64Encoded": false
+}
