@@ -1,0 +1,67 @@
+{
+  "resource": "/circuit_definitions/{circuitDefinition}/create",
+  "path": "/circuit_engine/circuit_definitions/ALTA_DE_COMERCIO/create",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "accept-encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlRpb0d5d3dsaHZkRmJYWjgxM1dwUGF5OUFsVSJ9.eyJhdWQiOiI5Nzc3MGRmZi01NmQ4LTQzNjYtYjVmNi1hNDUzNDZkODUxYTAiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vMWRhNTczNTMtNWI3Mi00ODQwLWIyYTUtMjY3MTk4OGJiMWI3L3YyLjAiLCJpYXQiOjE1MzE3NTg2MDgsIm5iZiI6MTUzMTc1ODYwOCwiZXhwIjoxNTMxNzYyNTA4LCJlbWFpbCI6Imdhc3RvbkBidGVrc3R1ZGlvMS5vbm1pY3Jvc29mdC5jb20iLCJuYW1lIjoiR2FzdG9uIFRvbmdhIiwibm9uY2UiOiI0NjczNmIyOC02ODllLTQ3ZjYtYmNmYS03Yzk1M2ViZWNhY2EiLCJvaWQiOiIyMzk0ODAxNC03Y2EyLTQyMDYtYWU4MC0xYWI4ZjcwYzUwZWYiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJnYXN0b25AYnRla3N0dWRpbzEub25taWNyb3NvZnQuY29tIiwic3ViIjoiUHRKNnpGdm0wNDNlMWFDcmNudkQ0RVNZVkVDZFByYlFtSkxkMlB3bG42TSIsInRpZCI6IjFkYTU3MzUzLTViNzItNDg0MC1iMmE1LTI2NzE5ODhiYjFiNyIsInV0aSI6InpQWnVUVmtUc1V1OEVON29xbUltQUEiLCJ2ZXIiOiIyLjAifQ.lQR585fqaO4eN9yobCzyQTbWzJmPKxDXvmIPLIzb6AHODOiRYE-9tmfM0CId45Jl_tNAcK2uaBstwwO6j7yxRiQcztpQfdDv-wNB7q1iCgKaLy1XBvCtVKN-HaQQUziFgFgQSyyyjYaUI6cIsxg6HCC76hokAOjxPdi3Q6jPNOtizwf0cb55YC8hD3yJ8nD5ydFhStGLjygG3FQls32rp_NptKnCN_xxjYEKc-PPboEqR0srbBl0N14mKR6EDU7yFNQezYrfX71hxF6crNk8E3WcDmg9umCgXex0O4hXJysxxk-S47Iea-gIkNPGK1SAQGaW9LngLHPYR8Qhh5AQOw",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "DO",
+    "content-type": "application/json",
+    "Host": "dtkpredev-api.comercios.co",
+    "origin": "https://dtkpredev.comercios.co",
+    "Referer": "https://dtkpredev.comercios.co/",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    "Via": "1.1 88726c842eb674a26ad5b3d38cf135ef.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "JJwobjyPhrtjgt5UyTLbaEhE3aN3FkZLrJYN2dxdvllPK1KZTaa9Ig==",
+    "X-Amzn-Trace-Id": "Root=1-5b4cc9b0-9b569e849e0e87f06079565c",
+    "X-Forwarded-For": "186.150.159.13, 34.195.252.237",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": null,
+  "pathParameters": {
+    "circuitDefinition": "ALTA_DE_COMERCIO"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "vr91cq",
+    "authorizer": {
+      "credentials": "{\"username\":\"gaston@btekstudio1.onmicrosoft.com\",\"roles\":[\"COMERCIOS_SUCURSAL_OFICIAL\"]}",
+      "principalId": "gaston@btekstudio1.onmicrosoft.com",
+      "protocols": "[{\"resource\":\"circuit_engine:/status\",\"actions\":[\"GET\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/status\",\"actions\":[\"POST\"],\"effect\":\"deny\"},{\"resource\":\"circuit_engine:/circuits/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/circuits\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\",\"conditions\":[{\"ForAnyValue:StringEquals\":{\"assignedToGroup\":\"group1\",\"createdByGroup\":\"group1\"}}],\"views\":{\"view1\":{\"default\":true,\"fields\":{\"attachments\":true,\"circuitId\":false,\"creditCard\":\"#mask\"}}},\"factors\":{\"mfa\":{\"require\":true},\"sourceIp\":{\"IpAddress\":\"200.0.0.2/14\",\"NotIpAddress\":\"2.3.3.3/12\"}}},{\"resource\":\"circuit_engine:/tasks/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/tasks\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\",\"conditions\":[{\"ForAnyValue:StringEquals\":{\"assignedToGroup\":\"group1\",\"createdByGroup\":\"group1\"}}],\"views\":{\"view1\":{\"default\":true,\"fields\":{\"attachments\":true,\"circuitId\":false,\"creditCard\":\"#mask\"}}},\"factors\":{\"mfa\":{\"require\":true},\"sourceIp\":{\"IpAddress\":\"200.0.0.2/14\",\"NotIpAddress\":\"2.3.3.3/12\"}}},{\"resource\":\"circuit_engine:/task_definitions/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"},{\"resource\":\"circuit_engine:/circuit_definitions/*\",\"actions\":[\"GET\",\"POST\",\"PATCH\",\"PUT\",\"OPTIONS\"],\"effect\":\"allow\"}]"
+    },
+    "resourcePath": "/circuit_definitions/{circuitDefinition}/create",
+    "httpMethod": "POST",
+    "extendedRequestId": "KIRzgHOnoAMF1ZA=",
+    "requestTime": "16/Jul/2018:16:37:04 +0000",
+    "path": "/circuit_engine/circuit_definitions/ALTA_DE_COMERCIO/create",
+    "accountId": "104455529394",
+    "protocol": "HTTP/1.1",
+    "stage": "dtkpredev",
+    "requestTimeEpoch": 1531759024069,
+    "requestId": "789dbfcb-8916-11e8-a682-7f021822cd18",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "186.150.159.13",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+      "user": null
+    },
+    "apiId": "2lru1e6sic"
+  },
+  "body": "{\"payload\":{\"datos_impositivos\":{\"cuit\":34999257560}}}",
+  "isBase64Encoded": false
+}

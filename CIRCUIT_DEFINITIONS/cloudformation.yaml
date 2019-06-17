@@ -1,0 +1,7 @@
+  ${CF_FUNCTION_NAME}ApiResource:
+    Type: "AWS::ApiGateway::Resource"
+    Properties:
+      ParentId: !GetAtt CircuitsEngineAPI.RootResourceId
+      PathPart: \"circuit_definitions\"
+      RestApiId: !Ref CircuitsEngineAPI
+

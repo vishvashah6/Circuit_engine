@@ -1,0 +1,46 @@
+{
+  "tenantId": "tenant1",
+  "circuitId": "cd537bec-1e4d-4ac8-a1a1-e369409d611a",
+  "tenantId-createdAt-circuitDefinitionId": "tenant1#2018-05-21T02:13:05.675Z#undefined",
+  "createdByUser": "user1",
+  "createdByRole": "role1",
+  "createdAt": 1526868785675,
+  "circuitName": "circuit1",
+  "currentStatus": "CREATED",
+  "requestCompleted": true,
+  "history": [
+    {
+      "event": "CIRCUIT_CREATION",
+      "taskStatus": "CREATED",
+      "status": 1526868785675
+    }
+  ],
+  "payload": {
+    "datos_de_comercio": {
+      "company_or_owner_name": "Company 1",
+      "address": {
+        "street_number": "123",
+        "location_type": "Local",
+        "street_address": "Reconquista",
+        "locality": "CABA",
+        "region": "CABA",
+        "postal_code": "1702",
+        "country_name": "Argentina"
+      },
+      "entity_type": "person",
+      "documents": {
+        "D4": {
+          "files": [
+            {
+              "sort_order": 1,
+              "document": {
+                "url": "http://www.tes.com",
+                "mime_type": "image/jpeg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

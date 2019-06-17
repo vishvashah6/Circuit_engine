@@ -1,0 +1,112 @@
+  ${CF_FUNCTION_NAME}:
+    Type: AWS::Serverless::Function
+    Properties:
+      MemorySize: ${MEMORY_SIZE}
+      Timeout: ${TIMEOUT}
+      FunctionName: ${FUNCTION_NAME}
+      Handler: ${HANDLER}
+      Role:
+        Fn::ImportValue:
+          !Sub "\${Environment}-CircuitsEngineRole"
+      CodeUri:
+        Bucket: !Ref DeployBucketName
+        Key: ${FUNCTION_NAME}-${VERSION}.zip
+      Environment:
+        Variables:
+          MD5: ${VERSION}
+          ${CUSTOM_VARIABLES}
+  ${CF_FUNCTION_NAME}ApiResource:
+    Type: "AWS::ApiGateway::Resource"
+    Properties:
+      ParentId: !Ref ${ENV}CircuitsEngineCircuitDefinitionDetailApiResourceCircuitsDefinitionsDetails
+      PathPart: "create"
+      RestApiId: !Ref CircuitsEngineAPI
+  ${CF_FUNCTION_NAME}ApiResourceMethodPost:
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      HttpMethod: \"POST\"
+      OperationName: \"CreateCircuitPost\"
+      ResourceId: !Ref ${CF_FUNCTION_NAME}ApiResource
+      RestApiId: !Ref CircuitsEngineAPI
+      AuthorizationType: \"CUSTOM\"
+      AuthorizerId: !Ref ApiGatewayAuthorizer
+      RequestParameters:
+              \"method.request.path.circuitDefinition\": true
+      MethodResponses:
+        -
+          StatusCode: "200"
+          ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+          ResponseModels:
+              "application/json": !Ref ApiGatewayCircuitOutputModel
+        -
+          StatusCode: "400"
+          ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+          ResponseModels:
+              "application/json": !Ref ApiGatewayErrorModel
+        -
+          StatusCode: "500"
+          ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+          ResponseModels:
+              "application/json": !Ref ApiGatewayErrorModel
+      Integration:
+        Type: "AWS_PROXY"
+        Uri: !Sub arn:aws:apigateway:\${AWS::Region}:lambda:path/2015-03-31/functions/\${${CF_FUNCTION_NAME}.Arn}/invocations
+        IntegrationResponses:
+          -
+            StatusCode: "200"
+            ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+        IntegrationHttpMethod: \"POST\"
+        ContentHandling: "CONVERT_TO_TEXT"
+  ${CF_FUNCTION_NAME}ApiResourceMethodOptions:
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      HttpMethod: \"OPTIONS\"
+      OperationName: \"CreateCircuitOptions\"
+      ResourceId: !Ref ${CF_FUNCTION_NAME}ApiResource
+      RestApiId: !Ref CircuitsEngineAPI
+      AuthorizationType: NONE
+      RequestParameters:
+              \"method.request.path.circuitDefinition\": true
+      MethodResponses:
+        -
+          StatusCode: "200"
+          ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+          ResponseModels:
+              "application/json": "Empty"
+      Integration:
+        Type: "MOCK"
+        IntegrationResponses:
+          -
+            StatusCode: "200"
+            ResponseParameters:
+              \"method.response.header.Access-Control-Allow-Methods\": \"'POST,OPTIONS'\"
+              \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'\"
+              \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"
+        RequestTemplates:
+              application/json: \"{\\\"statusCode\\\": 200}\"
+        PassthroughBehavior: \"when_no_match\"
+        IntegrationHttpMethod: \"POST\"
+        ContentHandling: CONVERT_TO_TEXT
+  ${CF_FUNCTION_NAME}LambdaInvokePermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      FunctionName: !GetAtt ${CF_FUNCTION_NAME}.Arn
+      Action: 'lambda:InvokeFunction'
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Join [\"\",[\"arn:aws:execute-api:\", !Ref \"AWS::Region\" , \":\", !Ref \"AWS::AccountId\", \":\", !Ref CircuitsEngineAPI, \"/*/POST/circuit_definitions/*/create\"]]
+
