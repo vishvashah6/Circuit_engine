@@ -9,7 +9,7 @@
   },
   "author": "Gaston Pisacco <gaston@droptek.com>",
   "dependencies": {
-    "aws-sdk": "^2.230.1",
+    "aws-sdk": "^2.814.0",
     "hal": "^1.2.0"
   },
   "devDependencies": {
